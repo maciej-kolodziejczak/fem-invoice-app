@@ -1,6 +1,6 @@
 import s from './Icon.module.scss';
 
-type IconName =
+export type IconName =
   | 'arrow-down'
   | 'arrow-left'
   | 'arrow-right'
@@ -12,11 +12,11 @@ type IconName =
   | 'sun';
 
 type IconProps = {
-  size: number;
+  size?: number;
   icon: IconName;
 }
 
-export function Icon({ size, icon }: IconProps) {
+export function Icon({ icon, size = 16 }: IconProps) {
   return (
     <img className={s.root} src={`/icon-${icon}.svg`} alt={icon} width={size} />
   );

@@ -1,13 +1,7 @@
 @use "@/styles/mixins" as *;
 
 .root {
-  border: none;
-  outline: none;
-
-  color: inherit;
-  background: none;
-
-  cursor: pointer;
+  @include button-reset;
 
   @include supports-hover {
     opacity: 0.75;

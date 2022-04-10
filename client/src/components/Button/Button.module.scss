@@ -1,0 +1,115 @@
+@use "@/styles/mixins" as *;
+@use "@/styles/properties" as *;
+
+.root {
+  @include button-reset;
+
+  position: relative;
+
+  display: inline-flex;
+  gap: 1rem;
+  align-items: center;
+
+  height: 3rem;
+  padding-inline: 1.5rem;
+
+  border-radius: 1.5rem;
+
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1;
+
+  overflow: hidden;
+  z-index: 1;
+
+  & > span {
+    /* Center the button visually */
+    margin-bottom: -1px;
+  }
+
+  &:before {
+    content: '';
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    width: 101%;
+    height: 101%;
+
+    border-radius: 1.5rem;
+
+    z-index: -1;
+
+    transform: translate(100%, 100%);
+  }
+
+  @include supports-hover {
+    &::before {
+      transition: transform 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+
+    &:hover::before {
+      transform: translate(0, 0);
+    }
+  }
+}
+
+.primary,
+.danger,
+.secondary,
+.tetriary,
+.default {
+  @extend .root;
+}
+
+.primary {
+  color: use-color-property(neutral-100);
+  background-color: use-color-property(primary-500);
+
+  &::before {
+    background-color: use-color-property(primary-300);
+  }
+}
+
+.danger {
+  color: use-color-property(neutral-100);
+  background-color: use-color-property(secondary-500);
+
+  &::before {
+    background-color: use-color-property(secondary-300);
+  }
+}
+
+.secondary {
+  color: use-theme-property(button-secondary-color);
+  background-color: use-theme-property(button-secondary-background);
+
+  &::before {
+    background-color: use-theme-property(button-secondary-background-hover);
+  }
+}
+
+.tetriary {
+  color: use-theme-property(button-tetriary-color);
+  background-color: use-theme-property(button-tetriary-background);
+
+  &::before {
+    background-color: use-theme-property(button-tetriary-background-hover);
+  }
+}
+
+.default {}
+
+.icon {
+  display: inline-grid;
+  place-content: center;
+
+  width: 2rem;
+  height: 2rem;
+  margin-left: -1rem;
+
+  border-radius: 50%;
+
+  background-color: use-color-property(neutral-100);
+}

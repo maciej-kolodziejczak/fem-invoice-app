@@ -5,6 +5,14 @@ $light: (
   app-color-p: map-get($neutral, 'neutral-900'),
   app-color-s: map-get($neutral, 'neutral-300'),
   app-color-a: map-get($neutral, 'neutral-450'),
+
+  button-secondary-color: map-get($neutral, 'neutral-450'),
+  button-secondary-background: map-get($neutral, 'neutral-200'),
+  button-secondary-background-hover: map-get($neutral, 'neutral-300'),
+
+  button-tetriary-color: map-get($neutral, 'neutral-500'),
+  button-tetriary-background: map-get($neutral, 'neutral-550'),
+  button-tetriary-background-hover: map-get($neutral, 'neutral-900'),
 );
 
 $dark: (
@@ -12,4 +20,12 @@ $dark: (
   app-color-p: map-get($neutral, 'neutral-100'),
   app-color-s: map-get($neutral, 'neutral-300'),
   app-color-a: map-get($neutral, 'neutral-300'),
+
+  button-secondary-color: map-get($neutral, 'neutral-300'),
+  button-secondary-background: map-get($neutral, 'neutral-600'),
+  button-secondary-background-hover: map-get($neutral, 'neutral-100'),
+
+  button-tetriary-color: map-get($neutral, 'neutral-300'),
+  button-tetriary-background: map-get($neutral, 'neutral-550'),
+  button-tetriary-background-hover: map-get($neutral, 'neutral-800'),
 );
