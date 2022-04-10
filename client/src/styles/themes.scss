@@ -1,0 +1,15 @@
+@use "colors" as *;
+
+$light: (
+  app-bg: map-get($neutral, 'neutral-200'),
+  app-color-p: map-get($neutral, 'neutral-900'),
+  app-color-s: map-get($neutral, 'neutral-300'),
+  app-color-a: map-get($neutral, 'neutral-450'),
+);
+
+$dark: (
+  app-bg: map-get($neutral, 'neutral-800'),
+  app-color-p: map-get($neutral, 'neutral-100'),
+  app-color-s: map-get($neutral, 'neutral-300'),
+  app-color-a: map-get($neutral, 'neutral-300'),
+);

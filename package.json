@@ -1,0 +1,24 @@
+{
+  "name": "fem-invoice-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maciej-kolodziejczak/fem-invoice-app.git"
+  },
+  "author": "Maciej Kolodziejczak <maciej.kolodziejczak@icloud.com>",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/maciej-kolodziejczak/fem-invoice-app/issues"
+  },
+  "homepage": "https://github.com/maciej-kolodziejczak/fem-invoice-app#readme"
+}

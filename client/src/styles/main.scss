@@ -1,0 +1,20 @@
+@use "reset";
+@use "colors";
+@use "themes";
+@use "properties" as *;
+
+:root {
+  @include css-properties(colors.$primary, c);
+  @include css-properties(colors.$secondary, c);
+  @include css-properties(colors.$neutral, c);
+}
+
+body {
+  &.theme--dark {
+    @include css-properties(themes.$dark, t);
+  }
+
+  &.theme--light {
+    @include css-properties(themes.$light, t);
+  }
+}

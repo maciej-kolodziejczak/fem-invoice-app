@@ -1,0 +1,125 @@
+@use "@/styles/media" as *;
+@use "@/styles/mixins" as *;
+@use "@/styles/properties" as *;
+
+.root {
+  grid-area: 'sidebar';
+
+  display: grid;
+
+  background-color: use-color-property(neutral-700);
+
+  @include media('<desktop') {
+    grid-template-columns: 1fr auto auto;
+  }
+
+  @include media('>=desktop') {
+    grid-template-rows: 1fr auto auto;
+  }
+}
+
+.sidebarItem {
+  height: 100%;
+
+  display: grid;
+  place-content: center;
+
+  @include media('<desktop') {
+    padding-inline: 1.5rem;
+
+    & + .sidebarItem {
+      border-left: 1px solid use-color-property(neutral-550);
+    }
+  }
+
+  @include media('>=desktop') {
+    padding-block: 1.5rem;
+
+    & + .sidebarItem {
+      border-top: 1px solid use-color-property(neutral-550);
+    }
+  }
+}
+
+/* #region Logo */
+.logo {
+  $border-radius: 20px;
+  
+  position: relative;
+
+  width: 4.5rem;
+  height: 4.5rem;
+
+  display: grid;
+  place-content: center;
+
+  border-top-right-radius: $border-radius;
+  border-bottom-right-radius: $border-radius;
+
+  background-color: use-color-property(primary-500);
+
+  z-index: 1;
+  overflow: hidden;
+
+  cursor: pointer;
+
+  &::before {
+    content: '';
+
+    position: absolute;
+
+    display: inline-block;
+    width: calc(100% + $border-radius);
+    height: calc(100% + $border-radius);
+
+    border-top-left-radius: $border-radius;
+
+    background-color: use-color-property(primary-300);
+
+    transform: translateY(calc(50% - $border-radius / 2));
+
+    z-index: -1;
+  }
+
+  > img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  @include supports-hover {
+    &::before, > img {
+      transition: transform .25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    &:hover {
+      &::before {
+        transform: translate(-$border-radius, 0);
+      }
+
+      img {
+        transform: rotate(-90deg);
+      }
+    }
+  }
+
+  @include media('>=tablet') {
+    width: 5rem;
+    height: 5rem;
+
+    > img {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+
+  @include media('>=desktop') {
+    width: 6.25rem;
+    height: 6.25rem;
+
+    > img {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
+}
+/* #endregion */

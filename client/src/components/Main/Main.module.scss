@@ -1,0 +1,26 @@
+@use "@/styles/media" as *;
+@use "@/styles/properties" as *;
+
+.root {
+  color: use-theme-property(app-color-p);
+  background: use-theme-property(app-bg);
+
+  display: grid;
+
+  width: 100vw;
+  min-height: 100vh;
+
+  @include media('<tablet') {
+    grid-template-rows: 4.5rem 1fr;
+  }
+
+  @include media('>=tablet', '<desktop') {
+    grid-template-rows: 5rem 1fr;
+  }
+
+  @include media('>=desktop') {
+    grid-template-areas:
+      'sidebar content';
+    grid-template-columns: 6.25em 1fr;
+  }
+}

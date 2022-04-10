@@ -1,0 +1,21 @@
+@mixin css-properties($map, $prefix) {
+  @each $name, $value in $map {
+    --#{$prefix}-#{$name}: #{$value};
+  }
+}
+
+@function use-property($name, $prefix) {
+  @return var(--#{$prefix}-#{$name});
+}
+
+@function use-color-property($name) {
+  @return use-property($name, c);
+}
+
+@function use-layout-property($name) {
+  @return use-property($name, l);
+}
+
+@function use-theme-property($name) {
+  @return use-property($name, t);
+}
